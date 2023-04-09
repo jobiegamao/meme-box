@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarController: UITabBarController{
 	
-	@IBInspectable var initialIndex = 1
+	@IBInspectable var initialIndex: Int = 1
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
