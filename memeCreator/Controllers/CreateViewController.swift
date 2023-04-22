@@ -180,12 +180,19 @@ class CreateViewController: UIViewController {
 		if let savedData = try? json.encode(savedMemes){
 			let defaults = UserDefaults.standard
 			defaults.set(savedData, forKey: "data")
-			
+			updateTabBadge()
 //			if delegate is needed, for notes
 //			delegate?.didSaveNewItem()
 		} else {
 			print("failed to save")
 		}
+	}
+	
+	private func updateTabBadge(){
+		let tabbar = self.tabBarController!.tabBar
+		let historyTab = tabbar.items![0]
+		historyTab.badgeColor = .red
+		historyTab.badgeValue = "plus.diamond.fill"
 	}
 	
 	func loadData(){

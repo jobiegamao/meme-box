@@ -11,6 +11,8 @@ class HistoryViewController: UIViewController {
 	
 	
 	@IBOutlet var historyCV: UICollectionView!
+	
+	
 	let reuseIdentifier = "Cell"
 	var memes: [Meme] = []
 	
@@ -29,6 +31,12 @@ class HistoryViewController: UIViewController {
 		
 		loadData()
 		print(memes.count)
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		
+		
 	}
 	
 	func loadData(){
